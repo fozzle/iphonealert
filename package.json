@@ -1,0 +1,15 @@
+{
+  "name": "iphonealert",
+  "version": "1.0.0",
+  "description": "Check the apple website for stock, send a text to me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Petrovich",
+  "license": "MIT",
+  "dependencies": {
+    "request-promise": "^3.0.0",
+    "twilio": "^2.9.1"
+  }
+}
