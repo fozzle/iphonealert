@@ -2,7 +2,7 @@
 
 const  rp = require('request-promise'),
   config = require('./config.json'),
-  twilio = require('twilio')(config.TwilioSID, config.TwilioAuthToken);
+  text = require('mtextbelt');
 
 const URL = `http://www.apple.com/shop/retailStore/availabilitySearch?parts.0=MLY42LL%2FA&parts.1=MLMD2LL%2FA&parts.2=MLME2LL%2FA&parts.3=MLY32LL%2FA&location=${config.Location}`,
   PartsToColor = {
@@ -43,10 +43,9 @@ rp({
   inStockStores.forEach((store) => {
     body += `${store.storeName}: ${store.availColors}\n`;
   });
-  twilio.sendMessage({
-    to: config.TargetPhoneNumber,
-    from: config.TwilioPhoneNumber,
-    body: body
+  console.log(body);
+  text.send(config.TargetPhoneNumber, body, function(err) {
+    if (err) console.log(err);
   });
 })
 .catch((err) => {

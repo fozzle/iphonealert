@@ -9,6 +9,7 @@
   "author": "Kyle Petrovich",
   "license": "MIT",
   "dependencies": {
+    "mtextbelt": "^0.2.0",
     "request-promise": "^3.0.0",
     "twilio": "^2.9.1"
   }
